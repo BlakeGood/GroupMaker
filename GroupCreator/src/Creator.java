@@ -40,20 +40,39 @@ public class Creator
 						temp = size % groups;
 						lastGroupSize = groupSize + 1;
 						System.out.println("You should have " + (groups - temp) + " groups of " + groupSize + " and " + temp + " groups of " + lastGroupSize);
+						System.out.println();
 					}
 			
 				//Randomizes Groups
-				System.out.println("Would you like to randomize your groups?");
-				Scanner userAnswer = new Scanner(System.in);
-				String answer = userAnswer.nextLine();
-				
-				if(answer.equals("No"))
+				System.out.println("Here are your groups:");
+				System.out.println();
+				int getter = 0;
+				for(int i = 1; i < groups; i++)
 					{
-						for(int i = 0; i < groups; i++)
+						if(i <= (groups - temp) )
 							{
-								
+								System.out.println("Group #" + i + ":");
+								for(int j = 0; j < groupSize; j++)
+									{
+										System.out.println(students.get(getter));
+										getter = getter + 1;
+									}
+								System.out.println();
+							}
+					
+						if(i >= (groups - temp))
+							{
+								System.out.println("Group #" + (i + 1) + ":");
+								for(int k = 0; k < lastGroupSize; k++)
+									{
+										System.out.println(students.get(getter));
+										getter = getter + 1;
+									}
+								System.out.println();
 							}
 					}
+				
+				
 			}
 
 	}
