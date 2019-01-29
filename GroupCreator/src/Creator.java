@@ -42,11 +42,23 @@ public class Creator
 						System.out.println("You should have " + (groups - temp) + " groups of " + groupSize + " and " + temp + " groups of " + lastGroupSize);
 						System.out.println();
 					}
-			
+				int counter = 0;
+				boolean runAgain = true;
+				while (runAgain)
+					{
 				//Randomizes Groups
 				System.out.println("Here are your groups:");
 				System.out.println();
 				int getter = 0;
+//				int getterAdd = 1;
+//				if(counter == 1)
+//					{
+//						getterAdd = 4;
+//					}
+//				if(counter == 2)
+//					{
+//						getterAdd = 5;
+//					}
 				for(int i = 1; i < groups; i++)
 					{
 						if(i <= (groups - temp) )
@@ -58,8 +70,9 @@ public class Creator
 										getter = getter + 1;
 									}
 								System.out.println();
-							}
 					
+							}
+						
 						if(i >= (groups - temp))
 							{
 								System.out.println("Group #" + (i + 1) + ":");
@@ -70,9 +83,22 @@ public class Creator
 									}
 								System.out.println();
 							}
+						
 					}
-				
-				
-			}
-
-	}
+				System.out.println("Would you like to randomize again?");
+				Scanner userAgain = new Scanner (System.in);
+				String again = userAgain.nextLine();
+				if(again.equals("Yes"))
+					{
+						runAgain = true;
+						counter++;
+					}
+				if(again.equals("No"))
+					{
+						runAgain = false;
+						System.out.println("Thank you for using the group project randomizer!");
+					}
+					}
+			
+	}						
+}
